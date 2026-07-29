@@ -276,7 +276,8 @@ class IngestionPipeline:
         if isinstance(content, str):
             content = content.encode()
         return hashlib.sha256(content).hexdigest()[:16]
-
+    
+## location of bug ##
     def _check_skip(self, source_id: str, source_type: str) -> Optional[IngestResult]:
         """
         Check if source has already been ingested.
@@ -288,7 +289,7 @@ class IngestionPipeline:
             # This assumes a table/model named IngestedSource
             existing = self.db_session.query(
                 "IngestedSource"  # Placeholder - actual query depends on ORM
-            ).filter_by(source_id=source_id).first()
+            ).filter_by(source_id=source_id).first() # change to .filter_by(source_id=source_id, source_type=source_type)
 
             if existing:
                 logger.info("Source already ingested, skipping", source_id=source_id)
