@@ -296,7 +296,7 @@ class IngestionPipeline:
             # This assumes a table/model named IngestedSource
             existing = (
                 self.db_session.query("IngestedSource")  # Placeholder - actual query depends on ORM
-                .filter_by(source_id=source_id, source_type=source_type)
+                .filter_by(content_hash=source_id, source_type=source_type)
                 .first()
             )
 
