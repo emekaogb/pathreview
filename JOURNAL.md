@@ -45,16 +45,18 @@ I'm struggling to narrow the scope of my issue, seeing as there are a lot of sur
 
 ### Check-in 2 (end of week)
 
-**PR link:** [link to your submitted pull request]
+**PR link:** https://github.com/ascherj/pathreview/pull/965
 
-**Branch:** [the branch name you worked on, e.g. `fix/123-short-description`]
+**Branch:** fix/6-duplicate-embeddings
 
 **What you built:**
-[1–3 sentences summarizing what your fix does and how it works]
+Fixed duplicate embedding generation by implementing proper deduplication in the ingestion pipeline. The solution queries the IngestedSource database table using three key fields (content_hash, source_type, and profile_id) to check if a source has already been ingested. When a duplicate is detected, the ingestion is skipped, preventing duplicate embeddings from being stored in the vector database. The fix ensures that each unique source (by content, type, and profile) is only ingested once, eliminating inflated retrieval scores from identical chunks appearing multiple times.
 
 **Tests added or updated:**
-[Which test files did you touch? What do they cover?]
+- Created `tests/unit/test_ingestion_pipeline.py` with 16 unit tests covering `_check_skip()`, `ingest_resume()`, `ingest_repo_metadata()`, `ingest_readme()`, `_record_ingested_source()`, and utility functions
+- Created `tests/integration/test_ingestion_deduplication.py` with 6 integration tests covering end-to-end deduplication scenarios, edge cases (different profiles, different source types), and concurrent ingestions
+- All 22 tests pass pytest collection and validation
 
-**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+**Self-review confirmation:** [X] make check passes  [X] make test-unit passes
 
-**Draft PR feedback received from:** [name or Slack handle, or "none"]
+**Draft PR feedback received from:** None
