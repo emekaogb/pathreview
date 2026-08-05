@@ -27,3 +27,34 @@ I ingested a GitHub repo for the first time and then re-uploaded the same repo w
 
 **Blockers or open questions:**
 I'm uncertain about the scope of the bug I've been assigned. There are a lot of connected parts and I want to make sure I'm applying fixes to only the aspects that are related to my issue. Also, the database model being used for this repo has many placeholders and doesn't seem to be active, so it makes testing harder.
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+I've implemented the fix to the code for the specified bug in the system (steps 1 and 2 of my plan). To do this, I added filtering checks for source_type and routed the source_id check to match with the content_hash in the IngestedSource model. 
+
+**Next steps:**
+I'm working on creating a test suite to unit tests the individual pipeline functions and also integration tests convering deduplication for every type of IngestedSource (resume, repo, etc.)
+
+**Blockers:**
+I'm struggling to narrow the scope of my issue, seeing as there are a lot of surrounding bugs that surface when probing for this specific issue.
+
+---
+
+### Check-in 2 (end of week)
+
+**PR link:** [link to your submitted pull request]
+
+**Branch:** [the branch name you worked on, e.g. `fix/123-short-description`]
+
+**What you built:**
+[1–3 sentences summarizing what your fix does and how it works]
+
+**Tests added or updated:**
+[Which test files did you touch? What do they cover?]
+
+**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+
+**Draft PR feedback received from:** [name or Slack handle, or "none"]
