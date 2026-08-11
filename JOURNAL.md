@@ -60,3 +60,34 @@ Fixed duplicate embedding generation by implementing proper deduplication in the
 **Self-review confirmation:** [X] make check passes  [X] make test-unit passes
 
 **Draft PR feedback received from:** None
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [X] No — still awaiting review
+
+**Summary of feedback:**
+No review came in.
+
+**How you responded:**
+N/A.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+One part that surprised me was having to assess which bugs within the codebase fell within the scope of my fix. There would adjacent bugs that existed when reproducing my problem, but I had to realize that those bugs were separate from what I was addressing in my branch. In a real world scenario, I'm assuming another branch could be made for that or alerting team leadership to add an undocumented bug to the backlog.
+
+**What did you learn about working in a large codebase?**
+I learned that understanding how logic flows in an unfamiliar codebase takes time and a detail-oriented mindset. When I'm building my own projects too from now on, I'll keep in mind that someone else may be reading the code in the future and needs to understand it, not just me. Readability and maintainability is important for work to persist beyond just one engineer. 
+
+**How did AI tools help — and where did they fall short?**
+AI was the most useful when trying to understand different functions or how certain libraries/modules worked together. It made understanding the codebase much faster and easier. I needed to go beyond what the AI was giving me when it came to implementing a fix, because some business logic, the AI was not able to pick up on.
+
+**What would you do differently if you started over?**
+If I were to start over, I would take the understanding the codebase step more seriously, because while your bug may only lie in one section, the fix may affect other sections of the codebase you hadn't considered before. Understanding larger parts of the codebase would have been helpful in that scenario.
+
+**What are you most proud of from this module?**
+I'm most proud of submitting a PR to an actual production repository. I've submitted PRs on small group projects, but the PR environment for this module just seemed a lot more aligned with how it would be in a real work setting. 
